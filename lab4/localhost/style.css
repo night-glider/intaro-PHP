@@ -1,0 +1,26 @@
+body
+{
+  padding: 0;
+  margin: 0;
+}
+
+h4
+{
+  margin: 5px;
+}
+
+.detailed_book_card {
+  width: 75vw;
+  margin: auto;
+  margin-top: 1vh;
+}
+
+.detailed_book_cover {
+  width: 100%;
+}
+
+.book_card {
+  width: 50vw;
+  margin: auto;
+  margin-top: 10px;
+}
