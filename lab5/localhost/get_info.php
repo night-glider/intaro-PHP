@@ -1,10 +1,12 @@
 <?php
 
+$apiKey = file_get_contents("apikey.txt");
+
 $curl = curl_init();
 $text = htmlspecialchars($_GET['place']); #искомое место
 $text = rawurlencode($text); #Теперь переводим текст искомого места в 
 #адрес, по которому делаем запрос
-$addr = sprintf("https://geocode-maps.yandex.ru/1.x?geocode=%s&apikey=c206933a-e8f8-4485-a0f0-f3835011ba62&format=json", $text);
+$addr = sprintf("https://geocode-maps.yandex.ru/1.x?geocode=%s&apikey=%s&format=json", $text, $apiKey);
 
 #задаём параметры запроса
 curl_setopt_array($curl, [
@@ -38,7 +40,7 @@ $curl = curl_init();
 
 $coords = $position[0] . "," . $position[1]; #записываем координаты в формате, который принимает api
 #генерируем адрес запроса
-$addr = sprintf("https://geocode-maps.yandex.ru/1.x/?apikey=c206933a-e8f8-4485-a0f0-f3835011ba62&geocode=%s&kind=metro&format=json&results=1", $coords);
+$addr = sprintf("https://geocode-maps.yandex.ru/1.x/?apikey=%s&geocode=%s&kind=metro&format=json&results=1", $apiKey, $coords);
 #задаём параметры запроса
 curl_setopt_array($curl, [
   CURLOPT_URL => $addr,
