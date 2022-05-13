@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>get_book</title>
+
+    <link href="{{ asset('win95.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('style.css') }}" rel="stylesheet"/>
+</head>
+
+<body>
+    <div class="detailed_book_card">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="my-0 font-weight-normal">{{book.getName()}}</h4>
+            </div>
+            <img class= "detailed_book_cover" src="{{book.getCoverURL()}}" >
+            <p>Автор: {{book.getAuthor()}}</p>
+            <a href="{{book.getFileURL}}" download>Скачать книгу</a><br>
+            <a href="/editbook?id={{book.getId}}">Редактировать книгу</a>
+        </div>
+    </div>
+</body>
+
+</html>

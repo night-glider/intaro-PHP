@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>get_book</title>
+
+    <link href="{{ asset('win95.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('style.css') }}" rel="stylesheet"/>
+</head>
+
+<body>
+
+    {% for image in images %}
+        <div class="book_card">
+            <div class="card">
+                <div class="card-header">
+                    <a href="book?id={{image.GetID()}}">
+                        <h4 class="my-0 font-weight-normal">{{image.getName()}}</h4>
+                    </a>
+                </div>
+                <img class= "detailed_book_cover" src="{{image.getCoverUrl()}}" >
+            </div>
+        </div>
+    {% endfor %}
+
+</body>
+
+</html>
