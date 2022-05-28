@@ -18,6 +18,11 @@ use Symfony\Component\Routing\Annotation\Route;
 class RegistrationController extends AbstractController
 {
     //Регистрация
+    //Функция, которая вызывается каждый раз, когда пользователь переходит по адресу /register
+    //Аргумент Request $request указывает Symfony внедрить инструменты для обработки HTTP запросов.
+    //Аргумент UserPasswordHasherInterface $userPasswordHasher указывает Symfony внедрить инструменты для хэширования пароля пользователя
+    //Аргумент EntityManagerInterface $entityManager указывает Symfony внедрить интерфейс для сохранения экземпляров классов в БД
+    //Возвращает Response т.е. ответ сервера
     #[Route('/register', name: 'app_register')]
     public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response
     {

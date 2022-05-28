@@ -14,6 +14,9 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 class LoginController extends AbstractController
 {
     //Авторизация
+    //Функция, которая вызывается каждый раз, когда пользователь переходит по адресу /login
+    //Аргумент AuthenticationUtils $authenticationUtils указывает Symfony, что нужно использовать инструменты для авторизации пользователя
+    //Возвращает Response т.е. ответ сервера
     #[Route('login', name: 'login')]
     public function index(AuthenticationUtils $authenticationUtils): Response
     {

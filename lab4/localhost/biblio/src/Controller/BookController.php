@@ -16,6 +16,10 @@ use Symfony\Component\HttpFoundation\Request;
 class BookController extends AbstractController
 {
     //Создание книги
+    //Функция, которая вызывается каждый раз, когда пользователь переходит по адресу /createbook
+    //Аргумент ManagerRegistry $doctrine указывает Symfony внедрить службу Doctrine в метод контроллера.
+    //Аргумент Request $request указывает Symfony внедрить инструменты для обработки HTTP запросов.
+    //Возвращает Response т.е. ответ сервера
     #[Route('createbook')]
     public function create(ManagerRegistry $doctrine, Request $request): Response
     {
@@ -49,6 +53,10 @@ class BookController extends AbstractController
     }
 
     //Редактирование книги
+    //Функция, которая вызывается каждый раз, когда пользователь переходит по адресу /editbook
+    //Аргумент ManagerRegistry $doctrine указывает Symfony внедрить службу Doctrine в метод контроллера.
+    //Аргумент Request $request указывает Symfony внедрить инструменты для обработки HTTP запросов.
+    //Возвращает Response т.е. ответ сервера
     #[Route('editbook')]
     public function edit(ManagerRegistry $doctrine, Request $request): Response
     {
@@ -83,6 +91,9 @@ class BookController extends AbstractController
     }
 
     //Сраница просмотра/скачивания книги
+    //Функция, которая вызывается каждый раз, когда пользователь переходит по адресу /book
+    //Аргумент ManagerRegistry $doctrine указывает Symfony внедрить службу Doctrine в метод контроллера.
+    //Возвращает Response т.е. ответ сервера
     #[Route("/book/")]
     public function get_book(ManagerRegistry $doctrine): Response
     {
